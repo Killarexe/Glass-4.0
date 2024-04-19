@@ -7,12 +7,16 @@
 
 #include <SFML/Graphics.hpp>
 
-#ifdef GLASS_UI_API_4_EXPORTS
-	/// Used to export functions/classes to the Glass dll. 
-	#define GLASS_EXPORT __declspec(dllexport)
+#ifdef _WIN32
+  #ifdef GLASS_UI_API_4_EXPORTS
+	  /// Used to export functions/classes to the Glass dll. 
+	  #define GLASS_EXPORT __declspec(dllexport)
+  #else
+	  /// Used to import functions/classes from the Glass dll. 
+	  #define GLASS_EXPORT __declspec(dllimport)
+  #endif
 #else
-	/// Used to import functions/classes from the Glass dll. 
-	#define GLASS_EXPORT __declspec(dllimport)
+  #define GLASS_EXPORT
 #endif
 
 /// Basic output function used by Glass. 
