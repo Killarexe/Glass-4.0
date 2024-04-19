@@ -120,11 +120,6 @@ namespace gs {
 		///////////////////////////////////////////////////////////
 		Vec2f getCenter() const;
 
-		friend GLASS_EXPORT void draw(
-			sf::RenderTarget* target,
-			const Hitbox& hitbox,
-			sf::RenderStates renderStates = sf::RenderStates::Default
-		);
 	private:
 		/// Position of the Hitbox as a 2d coordinate. 
 		Vec2f position;
