@@ -39,14 +39,15 @@ $(OBJ_PATH):
 $(DEBUG_PATH):
 	@mkdir -p $(DEBUG_PATH)
 
+
 $(LIB_FILE): $(OBJS)
-	$(CXX) -o $@ $(OBJS) $(CXX_FLAGS)
+	ar rcs $@ $^
 
 $(OBJ_PATH)/%.o: $(SOURCE_DIR)/%.c*
 	$(CXX) $(OBJ_FLAGS) -o $@ $<
 
 $(LIB_FILE_DEBUG): $(OBJS_DEBUG)
-	$(CXX) $(OBJS_DEBUG) $(DEBUG_FLAGS) $(OBJS_DEBUG) -o $@
+	ar rcs $@ $^
 
 $(DEBUG_PATH)/%.o: $(SOURCE_DIR)/%.c*
 	$(CXX) $(OBJ_FLAGS) $(DEBUG_FLAGS) -o $@ $<
