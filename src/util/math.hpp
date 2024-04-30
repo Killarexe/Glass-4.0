@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MATH_H
+#define MATH_H
 
 // Dependencies 
 #include "../typedef.hpp"
@@ -32,9 +33,9 @@ template GLASS_EXPORT double operator*(gs::Vec3<double>, gs::Vec3<double>);
 namespace gs {
 	namespace util {
 		/// Constant for pi. 
-		GLASS_EXPORT extern const float PI;
+		GLASS_EXPORT extern const float PI = 3.141592653589793;
 		/// Constant for tau or 2pi. 
-		GLASS_EXPORT extern const float TAU;
+		GLASS_EXPORT extern const float TAU = 6.28318530717959;
 
 		///////////////////////////////////////////////////////////
 		/// Function clamp() will constrain a value between two 
@@ -266,3 +267,5 @@ namespace gs {
 		template GLASS_EXPORT Vec2<double> cartesianToPolar(Vec2<double>, bool); 
 	}
 }
+
+#endif

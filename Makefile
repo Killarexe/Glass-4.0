@@ -19,7 +19,7 @@ DEBUG_PATH = $(BUILD_DIR)/$(DEBUG_DIR)
 LIB_FILE = $(BIN_PATH)/$(NAME).a
 LIB_FILE_DEBUG = $(DEBUG_DIR)/$(NAME).a
 
-SOURCES = $(foreach x, $(SOURCE_DIR), $(wildcard $(addprefix $(x)/*,.c*)))
+SOURCES = $(shell find $(SOURCE_DIR) -name *.cpp)
 OBJS := $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SOURCES)))))
 OBJS_DEBUG := $(addprefix $(DEBUG_PATH)/, $(addsuffix .o, $(notdir $(basename $(SOURCES)))))
 
@@ -43,11 +43,11 @@ $(DEBUG_PATH):
 $(LIB_FILE): $(OBJS)
 	ar rcs $@ $^
 
-$(OBJ_PATH)/%.o: $(SOURCE_DIR)/%.c*
+$(OBJS): $(SOURCES)
 	$(CXX) $(OBJ_FLAGS) -o $@ $<
 
 $(LIB_FILE_DEBUG): $(OBJS_DEBUG)
 	ar rcs $@ $^
 
-$(DEBUG_PATH)/%.o: $(SOURCE_DIR)/%.c*
+$(DEBUG_PATH)/%.o: $(SOURCE_DIR)/%.cpp
 	$(CXX) $(OBJ_FLAGS) $(DEBUG_FLAGS) -o $@ $<
