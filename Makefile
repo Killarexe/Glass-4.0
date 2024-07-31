@@ -19,7 +19,7 @@ DEBUG_PATH = $(BUILD_DIR)/$(DEBUG_DIR)
 LIB_FILE = $(BIN_PATH)/$(NAME).a
 LIB_FILE_DEBUG = $(DEBUG_DIR)/$(NAME).a
 
-SOURCES = $(shell find $(SOURCE_DIR) -name *.cpp)
+SOURCES = $(wildcard $(SOURCE_DIR)/*.cpp)
 OBJS := $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SOURCES)))))
 OBJS_DEBUG := $(addprefix $(DEBUG_PATH)/, $(addsuffix .o, $(notdir $(basename $(SOURCES)))))
 
