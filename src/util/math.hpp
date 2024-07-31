@@ -102,7 +102,7 @@ namespace gs {
 		/// @returns Type: New value. 
 		///////////////////////////////////////////////////////////
 		template <typename Type>
-		GLASS_EXPORT Type approach(Type base, Type destination, 
+GLASS_EXPORT Type approach(Type base, Type destination, 
 			Type percentage);
 		///////////////////////////////////////////////////////////
 		/// Function approach() will move a color in the direction 
