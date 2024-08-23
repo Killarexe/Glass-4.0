@@ -19,13 +19,3 @@ std::ostream& operator<<(std::ostream& os, gs::Color color) {
                  << static_cast<int>(color.b) << ")";
     return os;
 }
-
-// Explicit template instantiations
-template std::ostream& operator<<(std::ostream&, gs::Vec2<int>);
-template std::ostream& operator<<(std::ostream&, gs::Vec2<unsigned>);
-template std::ostream& operator<<(std::ostream&, gs::Vec2<float>);
-template std::ostream& operator<<(std::ostream&, gs::Vec2<double>);
-template std::ostream& operator<<(std::ostream&, gs::Vec3<int>);
-template std::ostream& operator<<(std::ostream&, gs::Vec3<unsigned>);
-template std::ostream& operator<<(std::ostream&, gs::Vec3<float>);
-template std::ostream& operator<<(std::ostream&, gs::Vec3<double>);
