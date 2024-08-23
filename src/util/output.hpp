@@ -30,7 +30,7 @@ GLASS_EXPORT std::ostream& operator<<(std::ostream& os, gs::Vec3<Type> vec);
 ///////////////////////////////////////////////////////////
 GLASS_EXPORT std::ostream& operator<<(std::ostream& os, gs::Color color);
 
-template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<int>);
+template GLASS_EXPORT std::ostream& operator<<(std::ostream& os, gs::Vec2<int>);
 template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<unsigned>);
 template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<float>);
 template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<double>);

@@ -1,5 +1,5 @@
 #include "menu.hpp"
-#include <algorithm>
+#include "util/output.hpp"
 
 namespace gs {
   namespace priv {
@@ -67,11 +67,11 @@ namespace gs {
   }
 
   void Menu::setCenter(Vec2f position) {
-    // Do nothing as specified in the header
+    this->hitbox.setCenter(position);
   }
 
   void Menu::setCenter(float xpos, float ypos) {
-    // Do nothing as specified in the header
+    this->hitbox.setCenter(xpos, ypos);
   }
 
   void Menu::move(Vec2f offset) {

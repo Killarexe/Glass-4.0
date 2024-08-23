@@ -36,7 +36,7 @@ void Hitbox::setPosition(float x, float y) {
 }
 
 void Hitbox::setSize(Vec2f size) {
-  setSize(position.x, position.y);
+  setSize(size.x, size.y);
 }
 
 void Hitbox::setSize(float x, float y) {

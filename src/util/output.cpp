@@ -19,3 +19,12 @@ std::ostream& operator<<(std::ostream& os, gs::Color color) {
                  << static_cast<int>(color.b) << ")";
     return os;
 }
+
+template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<int>);
+template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<unsigned>);
+template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<float>);
+template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<double>);
+template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec3<int>);
+template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec3<unsigned>);
+template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec3<float>);
+template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec3<double>);
