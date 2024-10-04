@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 
 namespace gs {
+  #include "util/output.hpp"
 
   Text::Text() : shadow(false), shadowOffset(1.0f, 1.0f), shadowColor(0, 0, 0, 128) {
     locked = false;
@@ -183,7 +184,10 @@ namespace gs {
   void Text::generateHitbox() {
     sf::FloatRect bounds = text.getLocalBounds();
     sf::Vector2f position = text.getPosition();
-    hitbox = Hitbox(Vec2f(position.x, position.y), Vec2f(bounds.width, bounds.height));
+    Hitbox result = Hitbox(Hitbox::Shape::Rectangle);
+    result.setPosition(position);
+    result.setSize(bounds.getSize());
+    hitbox = result;
   }
 
   void draw(sf::RenderTarget* target, Text& text, sf::RenderStates renderStates) {

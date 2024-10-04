@@ -1,5 +1,8 @@
 #include "sprite.hpp"
+#include "hitbox.hpp"
+#include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Shape.hpp>
 
 namespace gs {
 
@@ -139,8 +142,11 @@ sf::Sprite& Sprite::getSprite() {
 }
 
 void Sprite::generateHitbox() {
-    sf::FloatRect bounds = sprite.getGlobalBounds();
-    hitbox = Hitbox(Vec2f(bounds.left, bounds.top), Vec2f(bounds.width, bounds.height));
+    sf::FloatRect rect = sprite.getGlobalBounds();
+    Hitbox _hitbox = Hitbox(Hitbox::Shape::Rectangle);
+    _hitbox.setPosition(rect.getPosition());
+    _hitbox.setSize(rect.getSize());
+    hitbox = _hitbox;
 }
 
 void mapSpriteToSize(Sprite& sprite, Vec2f size) {

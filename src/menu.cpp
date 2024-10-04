@@ -1,10 +1,10 @@
 #include "menu.hpp"
-#include "util/output.hpp"
 
 namespace gs {
   namespace priv {
     bool defaultMenuEnabled = true;
   }
+  #include "util/output.hpp"
 
   Menu defaultMenu;
 

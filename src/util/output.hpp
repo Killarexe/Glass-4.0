@@ -1,40 +1,27 @@
-#pragma once
+#ifndef OUTPUT_HPP
+#define OUTPUT_HPP
 
 // Dependencies 
 #include "../typedef.hpp"
+#include <iostream>
 
-///////////////////////////////////////////////////////////
-/// Function operator<<() will output the components of a 
-/// 2d vector. 
-/// @param std::ostream& os: Stream to output to. 
-/// @param gs::Vec2<Type> vec: Vector to output. 
-/// @returns std::ostream&: Updated output stream. 
-///////////////////////////////////////////////////////////
-template <typename Type>
-GLASS_EXPORT std::ostream& operator<<(std::ostream& os, gs::Vec2<Type> vec);
-///////////////////////////////////////////////////////////
-/// Function operator<<() will output the components of a 
-/// 3d vector. 
-/// @param std::ostream& os: Stream to output to. 
-/// @param gs::Vec3<Type> vec: Vector to output. 
-/// @returns std::ostream&: Updated output stream. 
-///////////////////////////////////////////////////////////
-template <typename Type>
-GLASS_EXPORT std::ostream& operator<<(std::ostream& os, gs::Vec3<Type> vec);
-///////////////////////////////////////////////////////////
-/// Function operator<<() will output the components of a 
-/// Color object. 
-/// @param std::ostream& os: Stream to output to. 
-/// @param gs::Color color: Color to output.  
-/// @returns std::ostream&: Updated output stream. 
-///////////////////////////////////////////////////////////
-GLASS_EXPORT std::ostream& operator<<(std::ostream& os, gs::Color color);
+template <typename T>
+GLASS_EXPORT std::ostream& operator<<(std::ostream& os, const gs::Vec2<T> vec) {
+    os << "(" << vec.x << ", " << vec.y << ")";
+    return os;
+}
 
-template GLASS_EXPORT std::ostream& operator<<(std::ostream& os, gs::Vec2<int>);
-template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<unsigned>);
-template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<float>);
-template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec2<double>);
-template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec3<int>);
-template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec3<unsigned>);
-template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec3<float>);
-template GLASS_EXPORT std::ostream& operator<<(std::ostream&, gs::Vec3<double>);
+template <typename T>
+GLASS_EXPORT std::ostream& operator<<(std::ostream& os, const gs::Vec3<T> vec) {
+    os << "(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
+    return os;
+}
+
+GLASS_EXPORT static std::ostream& operator<<(std::ostream& os, const gs::Color color) {
+    os << "RGB(" << static_cast<int>(color.r) << ", " 
+                 << static_cast<int>(color.g) << ", " 
+                 << static_cast<int>(color.b) << ")";
+    return os;
+}
+
+#endif
