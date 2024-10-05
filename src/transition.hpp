@@ -9,27 +9,32 @@ namespace gs {
 	/// smooth transition to an application. This works well 
 	/// with the State class. 
 	///////////////////////////////////////////////////////////  
+
+  /* Note from Killar.
+   * This class used an anonym Struct to hold transition variables.
+   * I removed this class because it provokes errors, and it doesn't repect c++ ISO norm.
+   * So why the FUCK they were an anonym Struct in a Class.
+   * Respecfully - Killar.
+   */
 	class GLASS_EXPORT Transition { 
 	public:
 		/// The style of the Transition. By default it is set to Fade. 
 		enum class Type { Fade, Scope }
 		type = Type::Fade;
-		struct {
-			/// Current percentage of the transitions completion.
-			float percentage;
-			/// Lowest percentage value. It is typicaly 0. 
-			float min;
-			/// Highest percentage value. If using fade set to 255 to fully darken. 
-			float max;
-			// /Change of percentage every update() call. 
-			float inc;
-			/// The state represents 0 = Nuetral, 1 = Increasing, -1 = Decreasing. 
-			int state;
-			/// Use this bool to detect when to switch game states. 
-			bool switchedState;
-			/// Color of transition. 
-			Color color;
-		};
+    /// Current percentage of the transitions completion.
+    float percentage;
+    /// Lowest percentage value. It is typicaly 0. 
+    float min;
+    /// Highest percentage value. If using fade set to 255 to fully darken. 
+    float max;
+    // /Change of percentage every update() call. 
+    float inc;
+    /// The state represents 0 = Nuetral, 1 = Increasing, -1 = Decreasing. 
+    int state;
+    /// Use this bool to detect when to switch game states. 
+    bool switchedState;
+    /// Color of transition. 
+    Color color;
 
 		Transition();
 		~Transition();

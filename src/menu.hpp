@@ -4,6 +4,7 @@
 #include "component.hpp"
 
 namespace gs {
+
 	namespace priv {
 		/// Determines weither or not to add new Components to the defaultMenu. 
 		GLASS_EXPORT extern bool defaultMenuEnabled; 

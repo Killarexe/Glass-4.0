@@ -4,6 +4,7 @@ namespace gs {
   namespace priv {
     bool defaultMenuEnabled = true;
   }
+
   #include "util/output.hpp"
 
   Menu defaultMenu;

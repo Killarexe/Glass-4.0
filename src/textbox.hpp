@@ -104,5 +104,7 @@ namespace gs {
 		int cursorTickSpeed = 50;
 		/// True if Textbox can have strings entered. 
 		bool isActive = false;
+
+    virtual void updateTextDisplay();
 	};
 }

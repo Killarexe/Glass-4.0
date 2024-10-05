@@ -27,7 +27,7 @@ namespace gs {
     }
 
     // Initialize external variables from key.hpp
-    int textUnicode = 0;
+    unsigned int textUnicode = 0;
 
     void setWindow(sf::RenderWindow* window) {
       priv::internalWindow = window;

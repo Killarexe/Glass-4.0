@@ -1,8 +1,6 @@
 #pragma once
 
 // Dependencies 
-#include "util/math.hpp"
-#include "input/key.hpp"
 #include "text.hpp"
 #include "sprite.hpp"
 

@@ -23,7 +23,7 @@ namespace gs {
 		}
 
 		/// Unicode value of last inputed character from keyboard. 
-		GLASS_EXPORT extern int textUnicode;
+		GLASS_EXPORT extern unsigned int textUnicode;
 
 		///////////////////////////////////////////////////////////         
 		/// Function setWindow() will give a window to Glass for 

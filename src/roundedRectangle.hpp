@@ -1,7 +1,6 @@
 #pragma once
 
 // Dependencies 
-#include "util/math.hpp"
 #include "component.hpp"
 
 namespace gs {
