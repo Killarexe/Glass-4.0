@@ -39,11 +39,14 @@ target_include_directories(${PROJECT_NAME}
 )
 
 # Add compile flags
-target_compile_options(${PROJECT_NAME} PRIVATE
-  -Wall
-  -Wpedantic
-  -O2
-)
+if(NOT WIN32)
+  target_compile_options(${PROJECT_NAME} PRIVATE
+    -Wall
+    -Wextra
+    -Wpedantic
+    -O2
+  )
+endif()
 
 # Optionally, you can add different flags for Debug and Release builds
 target_compile_options(${PROJECT_NAME} PRIVATE
