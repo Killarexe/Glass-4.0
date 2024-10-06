@@ -41,7 +41,6 @@ target_include_directories(${PROJECT_NAME}
 # Add compile flags
 target_compile_options(${PROJECT_NAME} PRIVATE
   -Wall
-  -Wextra
   -Wpedantic
   -O2
 )
