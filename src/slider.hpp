@@ -294,6 +294,8 @@ namespace gs {
 		/// @returns Vec2f: Size of Button regardless of Shape. 
 		///////////////////////////////////////////////////////////  
 		virtual Vec2f getButtonSize();
+
+    virtual Vec2f calculateButtonPosition();
 	};
 
 	///////////////////////////////////////////////////////////
