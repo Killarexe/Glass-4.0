@@ -24,6 +24,9 @@ if(BUILD_SHARED_LIBS)
   add_library(${PROJECT_NAME} SHARED ${PROJECT_SOURCES})
 else()
   add_library(${PROJECT_NAME} STATIC ${PROJECT_SOURCES})
+  if(WIN32)
+    target_compile_options(${PROJECT_NAME} PRIVATE -DGLASS_UI_API_4_EXPORTS)
+  endif()
 endif()
 
 # Link SFML libraries
@@ -41,14 +44,10 @@ target_include_directories(${PROJECT_NAME}
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_14)
 
 # Add compile flags
-if(NOT WIN32)
-  target_compile_options(${PROJECT_NAME} PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
-    -O2
-  )
-endif()
+target_compile_options(${PROJECT_NAME} PRIVATE
+  -Wall
+  -O2
+)
 
 # Optionally, you can add different flags for Debug and Release builds
 target_compile_options(${PROJECT_NAME} PRIVATE
