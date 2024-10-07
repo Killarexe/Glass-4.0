@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(Glass VERSION 4.0.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(BUILD_SHARED_LIBS "Build shared libraries" ON)
@@ -28,9 +28,6 @@ else()
     target_compile_options(${PROJECT_NAME} -DGLASS_UI_API_4_EXPORTS)
   endif()
 endif()
-if(WIN32)
-  target_compile_options(${PROJECT_NAME} -std:c++17)
-endif()
 
 # Link SFML libraries
 target_link_libraries(${PROJECT_NAME} PUBLIC sfml-graphics sfml-window sfml-system)
@@ -44,7 +41,7 @@ target_include_directories(${PROJECT_NAME}
       ${PROJECT_INCLUDE}
 )
 
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_14)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Add compile flags
 target_compile_options(${PROJECT_NAME} PRIVATE
