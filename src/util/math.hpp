@@ -19,10 +19,14 @@ Type operator*(gs::Vec3<Type> p1, gs::Vec3<Type> p2) {
 
 namespace gs {
   namespace util {
-  /// Constant for pi. 
-  GLASS_EXPORT static const float PI = 3.141592653589793;
-  /// Constant for tau or 2pi. 
-  GLASS_EXPORT static const float TAU = 6.28318530717959;
+  #ifdef _WIN32
+    GLASS_EXPORT extern const float PI = 3.141592653589793;
+    GLASS_EXPORT extern const float TAU = 6.28318530717959;
+  #else
+    static const float PI = 3.141592653589793;
+    static const float TAU = 6.28318530717959;
+  #endif
+
   // Clamp function
   template <typename Type>
     GLASS_EXPORT Type clamp(Type value, Type min, Type max) {
