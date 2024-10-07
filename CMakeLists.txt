@@ -38,6 +38,8 @@ target_include_directories(${PROJECT_NAME}
       ${PROJECT_INCLUDE}
 )
 
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_14)
+
 # Add compile flags
 if(NOT WIN32)
   target_compile_options(${PROJECT_NAME} PRIVATE
