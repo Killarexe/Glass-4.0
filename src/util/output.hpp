@@ -17,11 +17,20 @@ GLASS_EXPORT std::ostream& operator<<(std::ostream& os, const gs::Vec3<T> vec) {
     return os;
 }
 
-GLASS_EXPORT static std::ostream& operator<<(std::ostream& os, const gs::Color color) {
+#ifdef _WIN32
+  GLASS_EXPORT extern std::ostream& operator<<(std::ostream& os, const gs::Color color) {
     os << "RGB(" << static_cast<int>(color.r) << ", " 
                  << static_cast<int>(color.g) << ", " 
                  << static_cast<int>(color.b) << ")";
     return os;
-}
+  }
+#else
+  GLASS_EXPORT static std::ostream& operator<<(std::ostream& os, const gs::Color color) {
+    os << "RGB(" << static_cast<int>(color.r) << ", " 
+                 << static_cast<int>(color.g) << ", " 
+                 << static_cast<int>(color.b) << ")";
+    return os;
+  }
+#endif
 
 #endif
