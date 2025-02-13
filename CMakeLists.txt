@@ -24,9 +24,9 @@ if(BUILD_SHARED_LIBS)
   add_library(${PROJECT_NAME} SHARED ${PROJECT_SOURCES})
 else()
   add_library(${PROJECT_NAME} STATIC ${PROJECT_SOURCES})
-  if(WIN32)
-    target_compile_options(${PROJECT_NAME} PRIVATE -DGLASS_UI_API_4_EXPORTS)
-  endif()
+endif()
+if(WIN32)
+  target_compile_options(${PROJECT_NAME} PRIVATE -DGLASS_UI_API_4_EXPORTS)
 endif()
 
 # Link SFML libraries
