@@ -17,7 +17,7 @@ FetchContent_MakeAvailable(SFML)
 
 # Recursively find all source files in the src directory
 file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
-set(PROJECT_INCLUDE "${CMAKE_CURRENT_LIST_DIR}/src/")
+set(PROJECT_INCLUDE "${CMAKE_CURRENT_LIST_DIR}/include/")
 
 # Create the shared library
 if(BUILD_SHARED_LIBS)

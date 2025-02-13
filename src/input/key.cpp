@@ -1,4 +1,4 @@
-#include "key.hpp"
+#include "input/key.hpp"
 #include <SFML/Graphics.hpp>
 
 namespace gs {
